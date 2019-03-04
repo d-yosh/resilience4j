@@ -6,6 +6,7 @@ dependencies {
     compile project(':resilience4j-consumer')
     compile project(':resilience4j-circuitbreaker')
     compile project(':resilience4j-ratelimiter')
+    compile project(':resilience4j-bulkhead')
     compileOnly project(':resilience4j-prometheus')
     compileOnly project(':resilience4j-metrics')
     testCompile project(':resilience4j-prometheus')
