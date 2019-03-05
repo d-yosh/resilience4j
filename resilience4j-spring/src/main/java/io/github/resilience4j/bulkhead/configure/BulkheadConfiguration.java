@@ -5,6 +5,10 @@ import io.github.resilience4j.bulkhead.BulkheadRegistry;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * {@link org.springframework.context.annotation.Configuration
+ * Configuration} for resilience4j-bulkhead.
+ */
 @Configuration
 public class BulkheadConfiguration {
 
@@ -17,5 +21,10 @@ public class BulkheadConfiguration {
         });
 
         return bulkheadRegistry;
+    }
+
+    @Bean
+    public BulkheadAspect bulkheadAspect(BulkheadConfigurationProperties bulkheadConfigurationProperties, BulkheadRegistry bulkheadRegistry) {
+        return new BulkheadAspect(bulkheadConfigurationProperties, bulkheadRegistry);
     }
 }
